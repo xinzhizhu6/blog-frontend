@@ -1,0 +1,32 @@
+$sider_width: 24rem;
+$border: 1px solid $divider;
+
+.sider {
+    position: fixed;
+    left: 0;
+    z-index: $z_sider;
+    width: $sider_width;
+    height: 100vh;
+    border-right: $border;
+    background: $background;
+    transition: transform $normal ease-out;
+    transform: translateX(-$sider_width);
+
+    &.open {
+        transform: translateX(0);
+    }
+    > .top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+        padding: 0 1rem 0 2.4rem;
+        height: calc(5rem + 1px);
+        border-bottom: $border;
+
+        > .drawer_control {
+            position: absolute;
+            right: 1rem;
+        }
+    }
+}

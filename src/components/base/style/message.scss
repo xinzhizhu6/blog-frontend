@@ -1,0 +1,67 @@
+#message_wrapper {
+    position: fixed;
+	top: 0;
+	left: 50%;
+	z-index: $z_notification;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	margin: 0;
+	padding: 1rem;
+	transform: translateX(-50%);
+    .message {
+		margin-bottom: 1rem;
+		padding: 0 1.2rem;
+		min-width: 12rem;
+		min-height: 4rem;
+		border-radius: 0.4rem;
+		box-shadow: $middle_shadow;
+		color: white;
+		font-weight: 500;
+		font-size: 1.4rem;
+		cursor: pointer;
+		animation: slide-in $normal ease-out;
+
+		@include flex_center;
+
+		&.info {
+			background: #409eff;
+		}
+
+		&.success {
+			background: #67c23a;
+		}
+
+		&.error {
+			background: #f56c6c;
+		}
+
+		&.warning {
+			background: #e6a23c;
+		}
+
+		> span:last-child {
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+
+		 svg {
+			margin-right: 1rem;
+			font-size: 1.8rem;
+
+			@include flex_center;
+		}
+
+		@keyframes slide-in {
+			from {
+				opacity: 0;
+				transform: translateY(-1rem);
+			}
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+	}
+}

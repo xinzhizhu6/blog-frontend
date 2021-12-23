@@ -1,0 +1,66 @@
+@import "responsive";
+// @import 'border.css';
+
+html {
+	height: 100%;
+}
+
+body {
+	overflow-x: hidden;
+	overflow-y: auto;
+	height: 100%;
+	font-family: SF Pro Text, SF Pro Icons, PingFang SC, Helvetica, Arial, sans-serif !important;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 2em;
+	margin: 0.67em 0;
+}
+
+#root {
+	box-sizing: border-box;
+	margin-right: calc(100% - 100vw);
+	color: $text_primary;
+
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	scroll-behavior: smooth;
+
+	*,
+	*::before,
+	*::after {
+		box-sizing: inherit;
+	}
+
+	code {
+		font-family: Menlo, Consolas, Roboto Mono, SF Mono, Monaco, "Courier New", monospace;
+
+		-webkit-text-stroke: 0.1px;
+	}
+
+	a,
+	a:link,
+	a:visited,
+	a:hover,
+	a:active {
+		color: inherit;
+		text-decoration: none;
+		transition: color 0.2s;
+	}
+
+
+	.app {
+		position: relative;
+		display: flex;
+		flex-direction: row-reverse;
+	}
+}

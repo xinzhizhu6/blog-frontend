@@ -1,0 +1,197 @@
+{
+	"info": {
+		"not_login": "Not login",
+		"copy_link_to_clipboard": "The link has been copied to the clipboard",
+		"copy_code_to_clipboard": "The Code has been copied to the clipboard"
+	},
+	"success": {
+		"add": "Added successfully",
+		"save": "Saved successfully",
+		"login": "Sign in successfully",
+		"logout": "Sign out successfully",
+		"register": "Registration successfully",
+		"upload": "Upload successfully",
+		"comment": "Comment successfully"
+	},
+	"error": {
+		"add": "Added failed",
+		"save": "Saved failed",
+		"login": "Sign in failed",
+		"logout": "Sign out failed",
+		"register": "Registration failed",
+		"upload": "Upload failed",
+		"comment": "Comment failed",
+		"server_internal_error": "Server internal error",
+		"network_connection_failed": "Network connection failed",
+		"login_first": "Sign in first, please"
+	},
+	"warning": {},
+	"category": {
+		"frontend": "Frontend",
+		"mobile": "Mobile",
+		"backend": "Backend",
+		"computer_science": "Computer science",
+		"engineering": "Engineering"
+	},
+	"nav": {
+		"home": "Home",
+		"article_category": "Notes category",
+		"frontend": "Frontend",
+		"mobile": "Mobile",
+		"backend": "Backend",
+		"computer_science": "Computer science",
+		"engineering": "Engineering",
+		"document": "Documents",
+		"submenu1": "Submenu1",
+		"submenu2": "Submenu2",
+		"write": "Write",
+		"settings": "Settings",
+		"about": "About"
+	},
+	"home": {
+		"frontend": "Frontend",
+		"latest": "Latest",
+		"popular": "Popular",
+		"random": "Looking around"
+	},
+	"not_found": {
+		"page_not_found": "Page not found",
+		"go_back": "Go back",
+		"go_home": "Go home"
+	},
+	"article_detail": {
+		"create_date": "YYYY-MM-DD",
+		"total_words": "Total words:",
+		"views": "Views:",
+		"subscribe": "Subscribe",
+		"reviews": "Reviews:",
+		"collections": "Collections:",
+		"likes": "Likes:",
+		"comment": "Comment",
+		"reviews_total": "Reviews",
+		"add_review": "Comment",
+		"add": "Comment",
+		"after_login": "Sign in to comment",
+		"go_login": "Sign in",
+		"quote": "Quote",
+		"anonymous_user": "Anonymous User",
+		"rule": {
+			"content_length_limit": "Comment less than 8 digits"
+		}
+	},
+	"article_publish": {
+		"to_publish": "To publish",
+		"publish_prompt": "Publish after logging in",
+		"add_article": "Add article",
+		"title": "Title",
+		"category": "Category",
+		"introduce": "Introduce",
+		"publish": "Publish",
+		"row": "Row",
+		"column": "Column",
+		"generate": "Generate",
+		"rule": {
+			"introduce_length_limit": "Article description length cannot exceed 150 characters!",
+			"title_length_limit": "Title length is limited to 6～36 characters!",
+			"content_length_limit": "Article less than 150 digits",
+			"row_limit": "Row limit: 2~100",
+			"column_limit": "Column limit: 2~10"
+		}
+	},
+	"modal": {
+		"login": {
+			"heading": "Account sign in",
+			"login": "Sign in",
+			"have_not_account": "No account - register now",
+			"username": "Username",
+			"password": "Password",
+			"rule": {
+				"complete_account": "Please enter your complete account and password!",
+				"username_not_empty": "Username can not be empty!",
+				"not_zh": "It cannot be Chinese characters!",
+				"password_length_limit": "Password length must not be less than 6 digits!",
+				"number_and_alphabet": "Password should contain letters and numbers!"
+			}
+		},
+		"register": {
+			"heading": "Create account",
+			"next": "Next",
+			"username": "Username",
+			"password": "Password",
+			"password_confirm": "Confirm password",
+			"rule": {
+				"username_not_empty": "Username can not be empty!",
+				"not_zh": "It cannot be Chinese characters!",
+				"password_length_limit": "Password length must not be less than 6 digits!",
+				"number_and_alphabet": "Password should contain letters and numbers!",
+				"password_confirm_not_equal": "The two passwords entered are inconsistent!",
+				"exist": "The user already exists!"
+			}
+		},
+		"profile": {
+			"heading": "Improve profile",
+			"complete": "Complete",
+			"nickname": "Nickname",
+			"gender": "Gender",
+			"self_introduction": "Self introduction",
+			"github": "Github",
+			"email": "Email",
+			"phone": "Phone Number",
+			"wechat": "WeChat",
+			"male": "Male",
+			"female": "Female",
+			"rule": {
+				"nickname_length_limit": "The length of the nickname cannot be less than 2 digits!"
+			}
+		}
+	},
+	"header": {
+		"login": "Sign in",
+		"logout": "Sign out",
+		"search_placeholder": "Searching for",
+		"article": "Article",
+		"user": "User",
+		"no_data": "No data",
+		"libary": "Libary",
+		"lang": "Language",
+		"tool": "Tool"
+	},
+	"settings": {
+		"profile": {
+			"heading": "Account Profile",
+			"not_login": "Not logged in yet",
+			"logout": "Sign out",
+			"username": "Username",
+			"nickname": "Nickname",
+			"avatar": "Avatar",
+			"gender": "Gender",
+			"self_introduction": "Self introduction",
+			"your_name": "Your name",
+			"skills_and_hobbies": "Skills and hobbies",
+			"github": "Github",
+			"email": "Email",
+			"phone": "Phone Number",
+			"wechat": "WeChat",
+			"male": "Male",
+			"female": "Female",
+			"rule": {
+				"nickname_length_limit": "The length of the nickname cannot be less than 2 digits!"
+			}
+		},
+		"auto_sync": "Sign account automatic synchronization settings.",
+		"go_login": "Sign in",
+		"appearance": "Appearance",
+		"i18n": "Internationalization",
+		"article": "Article",
+		"theme": "Theme",
+		"primary": "Ocean",
+		"success": "Grassland",
+		"warning": "Mango",
+		"error": "Coral",
+		"language": "Language",
+		"show_markdown_guide": "Show Markdown Demo"
+	},
+	"markdown": {
+		"placeholder": "Support markdown, text format"
+	}
+}

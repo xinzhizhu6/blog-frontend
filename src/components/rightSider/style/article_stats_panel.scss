@@ -1,0 +1,29 @@
+.article_stats_panel {
+	padding: 1rem 0;
+	cursor: default;
+
+	.item {
+		border-radius: 0;
+		color: $text_secondary;
+		padding: 10px 24px;
+		border-bottom: 0;
+
+		&.actived {
+			color: $highlight;
+		}
+
+		svg:first-child {
+			margin-right: 2rem;
+			font-size: 1.5rem;
+		}
+
+		strong {
+			margin-left: 1rem;
+		}
+
+		&:nth-child(1),
+		&:nth-child(2) {
+			cursor: pointer;
+		}
+	}
+}

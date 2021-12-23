@@ -1,0 +1,6 @@
+.global_loading {
+    width: 100vw;
+    height: 100vh;
+
+    @include flex_center;
+}
