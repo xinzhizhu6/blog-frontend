@@ -1,0 +1,36 @@
+@mixin glass {
+	background: rgba($background, 0.7);
+	backdrop-filter: saturate(50%) blur(20px);
+}
+
+@mixin flex_center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@mixin input_base {
+	outline: none;
+	border: none;
+
+	&textarea {
+		resize: none;
+	}
+}
+
+@mixin hide_scroll_bar {
+	-ms-overflow-style: none; /* IE/Edge */
+	scrollbar-width: none; /* Firefox */
+	&::-webkit-scrollbar {
+		display: none; /* Chrome Safari */
+	}
+}
+
+@mixin use_themes($base_name) {
+	@each $key, $value in $themes {
+		#{$base_name}_#{$key} {
+			$highlight: get_theme($key) !global;
+			@content;
+		}
+	}
+}

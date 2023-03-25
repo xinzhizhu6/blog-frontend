@@ -1,0 +1,32 @@
+$themes: (
+	primary: #409eff,
+	success: #67c23a,
+	warning: #e6a23c,
+	error: #f56c6c
+);
+
+$highlight: #409eff;
+
+$background: #fff;
+$background_variant: #f8f8f8;
+$text_primary: #000000f2;
+$text_secondary: #3c3c4399;
+$divider: rgba(#000, 0.1);
+$divider_variant: rgba(#000, 0.05);
+
+$z_header: 100;
+$z_footer: 200;
+$z_sider: 300;
+$z_mask: 400;
+$z_modal: 500;
+$z_notification: 600;
+
+$fast: 150ms;
+$normal: 250ms;
+$slow: 350ms;
+
+$small_shadow: 0 0.5px 2px rgba(#000000, 0.2);
+$middle_shadow: 1px 4px 16px rgba(#000000, 0.2);
+$large_shadow: 1px 6px 32px rgba(#000000, 0.2);
+
+$breakpoint_sm: 600px;

@@ -1,0 +1,54 @@
+.account {
+	@include use_themes('.btn') {
+		border: 1px solid $highlight;
+		background: $background;
+
+		@media (any-hover: hover) {
+			&:hover {
+				background: $background_variant;
+			}
+		}
+	}
+	@include use_themes('.avatar_wrapper') {
+		display: flex;
+		align-items: center;
+		border: 2px solid transparent;
+		border-radius: 50%;
+		cursor: pointer;
+		transition: border-color $normal;
+
+		@media (any-hover: hover) {
+			&:hover {
+				border: 2px solid $highlight;
+			}
+		}
+
+		> img {
+			width: 6rem;
+			height: 6rem;
+			border-radius: inherit;
+			vertical-align: text-top;
+
+			object-fit: cover;
+		}
+	}
+
+	.username_wrapper {
+		display: flex;
+		align-items: center;
+
+		> span {
+			margin-right: 3rem;
+			font-weight: 500;
+		}
+
+		@media screen and (max-width: $breakpoint_sm) {
+			> span {
+				margin-right: 1rem;
+			}
+			button {
+				max-width: 8rem;
+			}
+		}
+	}
+}

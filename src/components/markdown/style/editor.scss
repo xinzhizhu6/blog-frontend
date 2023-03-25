@@ -1,0 +1,126 @@
+.markdown_editor {
+	height: calc(100vh - 5rem);
+
+	> .header_bar {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 0 2rem;
+		width: 100%;
+		height: 5rem;
+		background: $background_variant;
+
+		@media screen and (max-width: $breakpoint_sm) {
+			padding: 0 1rem;
+		}
+
+		.tools {
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			min-width: 18rem;
+		}
+
+		.operation {
+			display: inline-flex;
+			align-items: center;
+			margin-left: 1rem;
+
+			button {
+				min-width: 4rem;
+			}
+
+			> span {
+				margin-left: 1rem;
+			}
+
+			.publish {
+				display: flex;
+				align-items: center;
+				margin-left: 1rem;
+				font-weight: 500;
+				font-size: 1.4rem;
+			}
+		}
+	}
+
+	> .content {
+		display: flex;
+		overflow: hidden;
+		width: 100%;
+		height: calc(100% - 5rem);
+		border-top: 1px solid $divider;
+		font-size: 1.4rem;
+
+		$article_padding: 1.5rem;
+
+		> article {
+			width: 50%;
+			height: 100%;
+
+			@media screen and (max-width: $breakpoint_sm) {
+				width: 100%;
+			}
+
+			&:last-child {
+				border-left: 1px solid $divider;
+			}
+		}
+
+		> .editor {
+			border: none;
+
+			> textarea {
+				padding: $article_padding;
+				width: 100%;
+				height: 100%;
+				font-size: 1.5rem;
+				resize: none;
+
+				@include input_base;
+			}
+		}
+
+		> .preview {
+			overflow-y: auto;
+			padding: $article_padding;
+			background: $background;
+		}
+	}
+}
+
+.table_input_wrapper {
+	position: absolute;
+	top: 5rem;
+	left: 0;
+	padding: 2rem;
+	min-height: 8rem;
+	max-width: 90vw;
+	width: 24rem;
+	box-shadow: $middle_shadow;
+
+	form:first-child {
+		width: 100%;
+
+		.top_wrapper {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding-bottom: 2rem;
+
+			> div {
+				margin: 0;
+
+				.input {
+					min-width: 8rem;
+					width: 8rem;
+				}
+			}
+		}
+		.bottom_wrapper {
+			display: flex;
+			flex-direction: row-reverse;
+		}
+	}
+}

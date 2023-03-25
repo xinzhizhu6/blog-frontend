@@ -1,0 +1,26 @@
+.modal_wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: $z_modal;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+
+    @include flex_center;
+
+    .content {
+        position: relative;
+        padding: 4rem;
+        min-width: 32rem;
+        max-width: 40rem;
+        width: 38rem;
+        border-radius: 0.4rem;
+        box-shadow: $large_shadow;
+
+        @media screen and (max-width: $breakpoint_sm) {
+            padding: 3rem;
+            width: calc(100vw - 6rem);
+        }
+    }
+}

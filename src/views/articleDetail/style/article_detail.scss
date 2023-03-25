@@ -1,0 +1,157 @@
+.article_detail_wrapper {
+	margin-bottom: 2rem;
+	max-width: 100%;
+	border-radius: 0.4rem;
+	background: $background;
+	box-shadow: $small_shadow;
+
+	&.loading {
+		margin-bottom: 0;
+	}
+
+	@media screen and (max-width: $breakpoint_sm) {
+		margin-bottom: 0;
+		border-radius: 0;
+	}
+
+	.article_content {
+		overflow-x: auto;
+		padding: 0 4rem 4rem 4rem;
+		min-height: 40rem;
+
+		@media screen and (max-width: $breakpoint_sm) {
+			padding: 0 2rem 4rem 2rem;
+		}
+	}
+
+	.bg_pic {
+		width: 100%;
+		background: $background;
+	}
+
+	.info {
+		padding: 2rem 4rem;
+
+		@include use_themes('.author') {
+			display: flex;
+			align-items: center;
+			margin-bottom: 2rem;
+
+			> img:first-child {
+				margin-right: 2rem;
+				width: 4rem;
+				height: 4rem;
+				border-radius: 50%;
+				vertical-align: text-top;
+
+				object-fit: cover;
+			}
+
+			.right_wrapper {
+				padding-top: 0.5rem;
+				line-height: 1.5em;
+
+				.nickname {
+					font-size: 1.5rem;
+				}
+
+				.creation_time {
+					color: $text_secondary;
+					font-size: 1.3rem;
+				}
+			}
+
+			> a {
+				color: $text_secondary !important;
+
+				@media (any-hover: hover) {
+					&:hover {
+						color: $highlight !important;
+					}
+				}
+			}
+		}
+
+		@media screen and (max-width: $breakpoint_sm) {
+			padding: 2rem;
+		}
+
+		.article {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 100%;
+
+			> div:first-child {
+				word-break: break-all;
+
+				> span {
+					margin-right: 2rem;
+					color: $text_secondary;
+					font-size: 1.3rem;
+
+					&:last-child {
+						margin-right: 0;
+					}
+				}
+			}
+
+			.tags_wrapper {
+				display: flex;
+
+				> div {
+					margin-left: 2rem;
+				}
+			}
+		}
+	}
+
+	.skeleton_wrapper {
+		overflow: hidden;
+		padding: 4rem;
+		height: calc(100vh - 7rem);
+
+		@media screen and (max-width: $breakpoint_sm) {
+			padding: 2rem;
+		}
+
+		.bg_skeleton {
+			width: 100%;
+			height: 100%;
+			background: $background_variant;
+		}
+
+		.content_skeleton {
+			position: relative;
+			display: flex;
+			overflow: hidden;
+			flex-direction: column;
+			padding-top: 4rem;
+			width: 100%;
+			background: $background;
+
+			> div {
+				margin-bottom: 2.4rem;
+				height: 2.4rem;
+			}
+
+			> .heading {
+				height: 3.2rem;
+				transform: translateX(-60%);
+			}
+
+			> .content1 {
+				transform: translateX(10%);
+			}
+
+			> .content2 {
+				width: 95%;
+			}
+
+			> .content3 {
+				margin-bottom: 0;
+				transform: translateX(-50%);
+			}
+		}
+	}
+}

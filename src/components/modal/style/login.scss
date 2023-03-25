@@ -1,0 +1,52 @@
+@import "common";
+
+.login_wrapper {
+    width: 100%;
+    border-radius: inherit;
+    background: $background;
+
+    @include with_title;
+    @include with_close;
+
+    @include use_themes('.go_register') {
+        margin-top: 1.6rem;
+        width: 100%;
+        color: $text_secondary;
+        text-align: center;
+        text-decoration: underline;
+        font-size: 1.3rem;
+        cursor: pointer;
+        transition: color $normal;
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: $highlight;
+            }
+        }
+    }
+
+    .avatar_wrapper {
+        margin-bottom: 1.6rem;
+
+        @include flex_center;
+
+        >div:first-child {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 7rem;
+            height: 7rem;
+        }
+
+        >img {
+            width: 7rem;
+            height: 7rem;
+            border-radius: 50%;
+        }
+    }
+
+    .submit {
+        width: 100%;
+        height: 4rem;
+    }
+}

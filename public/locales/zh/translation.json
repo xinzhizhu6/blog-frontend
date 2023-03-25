@@ -1,0 +1,197 @@
+{
+	"info": {
+		"not_login": "尚未登录",
+		"copy_link_to_clipboard": "链接已复制到剪切板",
+		"copy_code_to_clipboard": "代码已复制到剪切板"
+	},
+	"success": {
+		"add": "添加成功",
+		"save": "保存成功",
+		"login": "登录成功",
+		"logout": "签出成功",
+		"register": "注册成功",
+		"upload": "上传成功",
+		"comment": "评论发表成功"
+	},
+	"error": {
+		"add": "添加失败",
+		"save": "保存失败",
+		"login": "登录失败",
+		"logout": "签出失败",
+		"register": "注册失败",
+		"upload": "上传失败",
+		"comment": "评论发表失败",
+		"server_internal_error": "服务器内部错误",
+		"network_connection_failed": "网络连接失败",
+		"login_first": "请先登录"
+	},
+	"warning": {},
+	"category": {
+		"frontend": "Web前端",
+		"mobile": "移动端",
+		"backend": "后端",
+		"computer_science": "计算机通用",
+		"engineering": "工程化"
+	},
+	"nav": {
+		"home": "主页",
+		"article_category": "笔记分类",
+		"frontend": "Web前端",
+		"mobile": "移动端",
+		"backend": "后端",
+		"computer_science": "计算机通用",
+		"engineering": "工程化",
+		"document": "文档",
+		"submenu1": "子菜单1",
+		"submenu2": "子菜单2",
+		"write": "写作",
+		"settings": "设置",
+		"about": "关于"
+	},
+	"home": {
+		"frontend": "前端",
+		"latest": "最新发布",
+		"popular": "热门",
+		"random": "随便看看"
+	},
+	"not_found": {
+		"page_not_found": "页面找不到啦",
+		"go_back": "后退",
+		"go_home": "返回首页"
+	},
+	"article_detail": {
+		"create_date": "YYYY年MM月DD日",
+		"total_words": "总字数：",
+		"views": "阅读：",
+		"subscribe": "关注",
+		"reviews": "评论数",
+		"collections": "收藏：",
+		"likes": "获赞：",
+		"comment": "评论",
+		"reviews_total": "条评论",
+		"add_review": "发表评论",
+		"add": "发表",
+		"after_login": "登录后即可参与讨论",
+		"go_login": "去登录",
+		"quote": "回复",
+		"anonymous_user": "匿名用户",
+		"rule": {
+			"content_length_limit": "评论字数不能少于 8 位！"
+		}
+	},
+	"article_publish": {
+		"to_publish": "去发布",
+		"publish_prompt": "发布文章需先登录",
+		"add_article": "添加笔记",
+		"title": "标题",
+		"category": "类别",
+		"introduce": "简介",
+		"publish": "发布",
+		"row": "行",
+		"column": "列",
+		"generate": "生成",
+		"rule": {
+			"introduce_length_limit": "简介长度不能超过 150 位！",
+			"title_length_limit": "标题长度限制为 6～36 位！",
+			"content_length_limit": "字数少于 150",
+			"row_limit": "行数限制：2~100",
+			"column_limit": "列数限制：2~10"
+		}
+	},
+	"modal": {
+		"login": {
+			"heading": "用户登录",
+			"login": "登录",
+			"have_not_account": "没有账号-立即注册",
+			"username": "用户名",
+			"password": "密码",
+			"rule": {
+				"complete_account": "请输入完整的账号和密码！",
+				"username_not_empty": "用户名不能为空！",
+				"not_zh": "不能是汉字！",
+				"password_length_limit": "密码长度不得少于 6 位！",
+				"number_and_alphabet": "密码应包含字母和数字！"
+			}
+		},
+		"register": {
+			"heading": "创建账号",
+			"next": "下一步",
+			"username": "用户名",
+			"password": "密码",
+			"password_confirm": "确认密码",
+			"rule": {
+				"username_not_empty": "用户名不能为空！",
+				"not_zh": "不能是汉字！",
+				"password_length_limit": "密码长度不得少于 6 位！",
+				"number_and_alphabet": "密码应包含字母和数字！",
+				"password_confirm_not_equal": "两次输入的密码不一致！",
+				"exist": "该用户已存在！"
+			}
+		},
+		"profile": {
+			"heading": "完善个人资料",
+			"complete": "完成",
+			"nickname": "昵称",
+			"gender": "性别",
+			"self_introduction": "个人简介",
+			"github": "Github主页",
+			"email": "邮箱",
+			"phone": "电话号码",
+			"wechat": "微信号",
+			"male": "男",
+			"female": "女",
+			"rule": {
+				"nickname_length_limit": "昵称长度不能少于 2 位！"
+			}
+		}
+	},
+	"header": {
+		"login": "登录",
+		"logout": "退出",
+		"search_placeholder": "搜索 用户、文章",
+		"article": "文章",
+		"user": "用户",
+		"no_data": "没有数据",
+		"libary": "框架和库",
+		"lang": "语言",
+		"tool": "工具"
+	},
+	"settings": {
+		"profile": {
+			"heading": "用户资料",
+			"not_login": "尚未登录",
+			"logout": "退出",
+			"username": "用户名",
+			"nickname": "昵称",
+			"avatar": "头像",
+			"gender": "性别",
+			"self_introduction": "个人简介",
+			"your_name": "你的名字",
+			"skills_and_hobbies": "技能、兴趣爱好",
+			"github": "Github账号",
+			"email": "邮箱",
+			"phone": "电话号码",
+			"wechat": "微信号",
+			"male": "男",
+			"female": "女",
+			"rule": {
+				"nickname_length_limit": "昵称长度不能少于 2 位！"
+			}
+		},
+		"auto_sync": "登录账号 · 自动同步设置。",
+		"go_login": "去登录",
+		"appearance": "外观",
+		"i18n": "国际化",
+		"article": "编辑",
+		"theme": "主题",
+		"primary": "海洋",
+		"success": "草原",
+		"warning": "芒果",
+		"error": "珊瑚",
+		"language": "语言",
+		"show_markdown_guide": "展示 Markdown Demo"
+	},
+	"markdown": {
+		"placeholder": "支持Markdown、纯文本格式"
+	}
+}

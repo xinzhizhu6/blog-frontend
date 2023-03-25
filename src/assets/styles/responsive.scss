@@ -1,0 +1,24 @@
+$min_font_size: 1.4rem;
+$max_font_size: 1.8rem;
+$min_screen: 600px;
+$max_screen: 1200px;
+
+:root {
+	font-size: 10px;
+}
+
+article {
+	font-size: $min_font_size;
+}
+
+// @media (min-width: $min_screen) and (max-width: $max_screen) {
+// 	article {
+// 		font-size: calc($min_font_size + (2 - 1.4) * ((100vw - $min_screen) / (1200 - 800)));
+// 	}
+// }
+
+// @media (min-width: $max_screen) {
+// 	article {
+// 		font-size: $max_font_size;
+// 	}
+// }

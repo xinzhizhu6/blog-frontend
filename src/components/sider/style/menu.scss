@@ -1,0 +1,23 @@
+.menu {
+	z-index: 9;
+
+	.icon {
+		margin-right: 2rem;
+	}
+
+	.level1 {
+		font-weight: 600;
+		font-size: 1.5rem;
+	}
+
+	.level2 {
+		// padding-left: 5rem;
+		font-weight: 500;
+		font-size: 1.4rem;
+	}
+
+	.level3 {
+		// padding-left: 8rem;
+		font-size: 1.4rem;
+	}
+}

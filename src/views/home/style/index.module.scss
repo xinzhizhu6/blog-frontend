@@ -1,0 +1,19 @@
+@import 'article_list';
+
+.home_page {
+	> div:first-child {
+		padding-top: 2rem;
+		@media screen and (max-width: $breakpoint_sm) {
+			padding-top: 0;
+		}
+
+		.home_wrapper {
+			.list_wrapper {
+				min-height: calc(100vh - 7rem);
+				.tabs {
+					padding-left: 5rem
+				}
+			}
+		}
+	}
+}

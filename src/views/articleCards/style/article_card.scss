@@ -1,0 +1,80 @@
+.article_card_wrapper {
+    padding: 1rem;
+    min-width: 20rem;
+    width: 20%;
+
+    @media screen and (max-width: $breakpoint_sm) {
+		min-width: 50%;
+	}
+
+	@include use_themes('.article_card') {
+        position: relative;
+        overflow: hidden;
+        border-radius: 0.4rem;
+        background: $background;
+        box-shadow: $small_shadow;
+		transition: transform $fast ease-out, box-shadow $fast ease-out;
+
+        h3 {
+            font-size: 1.6rem;
+            transition: color $normal;
+        }
+
+        @media (any-hover: hover) {
+			&:hover {
+				box-shadow: $large_shadow;
+				transform: scale(1.02);
+
+				h3 {
+					color: $highlight;
+				}
+			}
+		}
+
+        .cover {
+			width: 100%;
+			height: 61.8%;
+
+			> img {
+				width: 100%;
+				height: 100%;
+				background: $background;
+				// vertical-align: text-top;
+
+				object-fit: cover;
+			}
+		}
+
+		.bottom {
+			display: flex;
+			flex-direction: column;
+			word-break: break-word;
+			line-height: 1.4;
+
+			> .title {
+				margin: 0;
+				color: $text_primary;
+				text-align: left;
+				font-size: 1.2rem;
+
+				> h3 {
+					margin: 1rem 0;
+					padding-right: 1rem;
+					padding-left: 1rem;
+					font-size: 1.5rem;
+					line-height: 1.4em;
+                    font-weight: bold;
+				}
+			}
+
+			> .author {
+				position: absolute;
+				right: 1rem;
+				bottom: 1rem;
+				margin: 0;
+				color: $text_secondary !important;
+				font-size: 1.2rem;
+			}
+		}
+    }
+}

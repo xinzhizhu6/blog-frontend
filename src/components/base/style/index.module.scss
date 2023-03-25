@@ -1,0 +1,16 @@
+@import 'aspectRatio';
+@import 'message';
+@import 'global_loading';
+@import 'panel';
+@import 'skeleton';
+
+.affix {
+	position: sticky;
+	top: 7rem;
+}
+
+.uploader {
+	> input {
+		display: none;
+	}
+}

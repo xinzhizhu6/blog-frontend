@@ -1,0 +1,35 @@
+@include use_themes('.banner') {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin: 0 0 4rem 0;
+	padding: 0 2rem;
+	height: 4rem;
+	border-radius: 0.4rem;
+	background: $highlight;
+	box-shadow: $small_shadow;
+	color: $background;
+
+	> span {
+		font-weight: 500;
+	}
+
+	> div {
+		cursor: pointer;
+
+		@include flex_center;
+
+		> span:first-child {
+			margin-right: 1rem;
+			min-width: 6rem;
+			text-align: center;
+			font-weight: 500;
+
+			@media (any-hover: hover) {
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}

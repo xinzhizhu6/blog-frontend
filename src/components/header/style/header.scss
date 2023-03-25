@@ -1,0 +1,91 @@
+$header_height: 5rem;
+$sider_width: 24rem;
+$title_width: 110rem;
+.progress_bar {
+	z-index: $z_mask + 1;
+	position: fixed !important;
+	top: 0;
+	line-height: 0 !important;
+
+	&.hide {
+		display: none;
+	}
+}
+.header {
+    position: fixed;
+	top: 0;
+	z-index: $z_header;
+	display: flex;
+	align-items: center;
+	padding: 0 1rem 0 8rem;
+	width: 100vw;
+	height: $header_height;
+	background: $background;
+	box-shadow: 0 0 2px rgba($color: #000000, $alpha: 0.2);
+	@include glass;
+
+	@media screen and (max-width: $breakpoint_sm) {
+		padding-left: 7rem;
+	}
+
+	.drawer_control {
+		position: absolute;
+		left: 2rem;
+		z-index: 200;
+		@media screen and (max-width: $breakpoint_sm) {
+			left: 1rem;
+		}
+	}
+
+	> .article_title {
+		position: absolute;
+		left: calc(50% - #{$title_width / 2});
+		display: flex;
+		overflow: hidden;
+		align-items: center;
+		width: $title_width;
+		height: 100%;
+		transition: transform $normal;
+
+		&.open {
+			transform: translateX($sider_width / 2);
+		}
+
+		> h2 {
+			overflow: hidden;
+			margin: 0 6rem;
+			width: 70%;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			font-size: 2rem;
+			transition: transform $normal ease-out;
+			transform: translateY($header_height);
+			font-weight: bold;
+			&.show {
+				transform: translateY(0);
+			}
+		}
+	}
+
+	> .tool_bar {
+		position: absolute;
+		right: 2rem;
+		display: flex;
+		align-items: center;
+
+		@media screen and (max-width: $breakpoint_sm) {
+			right: 1rem;
+		}
+
+		> .btn {
+			position: relative;
+			margin-right: 1rem;
+		}
+
+		> .go_login {
+			margin-left: 1rem;
+			@extend.btn;
+		}
+	}
+
+}

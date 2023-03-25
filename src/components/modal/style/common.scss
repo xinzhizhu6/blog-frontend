@@ -1,0 +1,25 @@
+@mixin with_title {
+	> h1:first-child {
+		margin: 0;
+		margin-bottom: 4rem;
+		text-align: center;
+		font-size: 2.4rem;
+	}
+}
+
+@mixin with_close {
+	.close {
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+	}
+}
+
+@mixin with_return {
+	.return {
+		position: absolute;
+		top: 1rem;
+		left: 1rem;
+		font-size: 1.5rem;
+	}
+}

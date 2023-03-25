@@ -1,0 +1,11 @@
+.about_page {
+	background: $background !important;
+
+	> div:first-child {
+		padding-top: 0;
+
+		.about_wrapper {
+			padding: 2rem;
+		}
+	}
+}

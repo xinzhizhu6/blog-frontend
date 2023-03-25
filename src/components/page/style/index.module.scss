@@ -1,0 +1,57 @@
+.page {
+	position: relative;
+	min-height: 100vh;
+	width: 100vw;
+	background: $background_variant;
+}
+
+.stable_page {
+	padding-top: 5rem;
+
+	@extend .page;
+}
+
+.flexible_page {
+	display: flex;
+	justify-content: center;
+	padding-top: 5rem;
+
+	@extend .page;
+
+	@media screen and (min-width: $breakpoint_sm) {
+		transition: width $normal;
+	}
+	@media screen and (max-width: $breakpoint_sm) {
+		padding-top: 5rem;
+	}
+
+	.container {
+		padding-right: 26rem;
+		max-width: 100%;
+		width: 110rem;
+	}
+
+	.full_width {
+		width: 100%;
+	}
+
+	&.narrowing {
+		width: calc(100vw - 24rem);
+	}
+
+	@media screen and (max-width: $breakpoint_sm) {
+		&.narrowing {
+			width: 100vw;
+		}
+		.container {
+			padding-right: 0;
+			width: 100%;
+		}
+	}
+}
+
+.full_screen_page {
+	z-index: $z_modal;
+
+	@extend .page;
+}

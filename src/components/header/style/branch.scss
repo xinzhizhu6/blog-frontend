@@ -1,0 +1,7 @@
+@include use_themes('.branch') {
+	> span {
+		color: $highlight;
+		font-weight: 600;
+		font-size: 2.2rem;
+	}
+}

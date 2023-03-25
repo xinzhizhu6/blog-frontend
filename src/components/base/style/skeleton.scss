@@ -1,0 +1,21 @@
+$dim: #f1f1f1;
+$bright: #fdfdfd;
+
+@keyframes flashing {
+	0% {
+		background: $dim;
+	}
+	50% {
+		background: $bright;
+	}
+	100% {
+		background: $dim;
+	}
+}
+
+.skeleton {
+	width: 100%;
+	height: 2rem;
+	background: $dim;
+	animation: flashing 2s infinite;
+}

@@ -1,0 +1,141 @@
+@mixin code_base {
+	font-size: 1.3rem !important;
+	font-family: Menlo, Consolas, SF mono, Roboto Mono !important;
+	line-height: 1.75em !important;
+}
+
+@mixin inline_code {
+	margin: 0 0.2rem;
+	padding: 0.1rem 0.4rem;
+	border: 1px solid $divider;
+	border-radius: 0.4rem;
+	background: $background_variant;
+
+	@include code_base;
+}
+
+@include use_themes('.markdown_wrapper') {
+
+	p,
+	ul>li,
+	ol>li {
+		line-height: 2em;
+
+		>code {
+			@include inline_code;
+		}
+	}
+
+	a {
+		color: $highlight !important;
+		font-weight: 500;
+		transition: color $normal;
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: rgba($highlight, 0.8) !important;
+				text-decoration: underline !important;
+			}
+		}
+	}
+
+	code {
+		@include code_base;
+	}
+
+	p>code {
+		@include inline_code;
+	}
+
+	.copy_btn {
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+		z-index: 1;
+		height: 0;
+		color: $text_secondary;
+		font-size: 1.5rem;
+		cursor: pointer;
+		transition: color $fast;
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: $text_primary;
+			}
+		}
+
+		>span:last-child {
+			font-size: 0;
+			opacity: 0;
+		}
+	}
+
+	.code_wrapper {
+		position: relative;
+		display: block;
+		overflow-x: auto;
+		padding: 2rem;
+		max-height: 70rem;
+		border: 1px solid $divider_variant;
+		border-radius: 0.4rem;
+		background: $background_variant;
+
+		// @include hide_scroll_bar;
+	}
+
+	.blockquote {
+		padding: 2rem;
+		border-left: 0.5rem solid $highlight;
+		border-top-right-radius: 0.4rem;
+		border-bottom-right-radius: 0.4rem;
+		background: rgba($highlight, 0.05);
+
+		margin-inline-start: 1rem;
+		margin-inline-end: 1rem;
+
+		>p:first-child {
+			margin: 0;
+		}
+	}
+
+	.pic {
+		padding: 1rem 0;
+
+		>img:first-child {
+			display: block; // fix 底部间隙
+			min-width: 30%;
+			max-width: 100%;
+			border-radius: 0.4rem;
+		}
+	}
+
+	.table {
+		border-right: 1px solid $divider;
+		border-bottom: 1px solid $divider;
+
+		thead>tr {
+			background: $background_variant;
+
+			>th {
+				text-align: start;
+			}
+		}
+
+		tbody>tr {
+			&:nth-child(even) {
+				background: $background_variant;
+			}
+		}
+
+		th,
+		td {
+			border-top: 1px solid $divider;
+			border-left: 1px solid $divider;
+			line-height: 1.5em;
+
+			>code {
+				@include inline_code;
+			}
+		}
+	}
+}
