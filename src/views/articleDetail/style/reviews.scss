@@ -1,0 +1,88 @@
+.reviews_wrapper {
+	padding: 1rem 0;
+
+	.review_wrapper {
+		padding: 0;
+
+		.review {
+			display: flex;
+			flex-direction: column;
+			padding: 2rem 0;
+			width: 100%;
+
+			.user {
+				display: flex;
+				align-items: center;
+				width: 100%;
+
+				> img:first-child {
+					margin-right: 1rem;
+					width: 4rem;
+					height: 4rem;
+					border-radius: 50%;
+					background: $background_variant;
+					vertical-align: text-top;
+
+					object-fit: cover;
+				}
+
+				> strong {
+					font-weight: 500;
+					font-size: 1.5rem;
+				}
+			}
+
+			.content {
+				display: block;
+				margin: 0 1rem 2rem 5rem;
+				padding: 1rem;
+				border: 1px solid $divider;
+				border-radius: 1rem;
+				border-top-left-radius: 0;
+				transform: scale(0);
+				transform-origin: left top;
+				animation: pop-up $normal ease-out forwards;
+
+				> span {
+					white-space: pre-wrap;
+					word-wrap: break-word;
+					font-family: SF Pro Text, SF Pro Icons, PingFang SC, Helvetica, Arial, sans-serif;
+					line-height: 1.5em;
+				}
+			}
+
+			.footer {
+				display: flex;
+				flex-direction: row-reverse;
+				width: 100%;
+
+				> span {
+					margin: 0 1rem;
+					color: $text_secondary;
+					font-size: 1.3rem;
+					transition: color $normal;
+
+					&:last-child {
+						cursor: pointer;
+
+						@media (any-hover: hover) {
+							&:hover {
+								color: $text_primary;
+								text-decoration: underline;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@keyframes pop-up {
+	from {
+		transform: scale(0);
+	}
+	to {
+		transform: scale(1);
+	}
+}
