@@ -1,16 +1,17 @@
-import React from "react"
+import React, { useCallback, useRef } from "react"
 import { useTranslation } from "react-i18next"
 import { useDispatch, useSelector } from "react-redux"
 import Options from "./Options"
 import style from '../style/index.module.scss'
-import { Button, Input, Select } from "antd"
+import { Button, Input, Select, Upload } from "antd"
 import clsx from "clsx"
 import { SmileOutlined, UserOutlined, IdcardOutlined, TeamOutlined, GithubOutlined, MailOutlined, PhoneOutlined, WechatOutlined, MessageOutlined } from "@ant-design/icons"
 import defaultAvatar from '@/assets/images/default_avatar.jpg'
-import { userLogout } from "@/store/actions"
+import { saveProfile, updateUserProfile, userLogout } from "@/store/actions"
+import * as fileApi from '@/apis/file'
+import { msg } from "@/components/base"
 const { Option } = Select
 const { TextArea } = Input
-
 /**
  * 用户个人资料
  * @returns {JSX.Element}
@@ -21,13 +22,38 @@ function Account() {
     const profile = useSelector(state => state.userProfile)
     const theme = useSelector(state => state.setting.theme)
     const { username, nickname, avatar, gender, selfIntroduction, contacts } = profile
-
+    const avatarRef = useRef()
 
     const handleLogout = () => {
         dispatch(userLogout())
     }
 
-
+    const handleChangeAvatar = useCallback(
+        async (e) => {
+            console.log(e)
+            let formData = new FormData()
+            formData.append('userId', profile.userId)
+            formData.append("image", e.target.files[0])
+            try {
+                const avatar = await fileApi.uploadImage(formData)
+                console.log(avatar)
+                dispatch(
+                    updateUserProfile({
+                        ...profile,
+                        avatar
+                    })
+                )
+                dispatch(saveProfile({ ...profile,avatar }))
+            } catch (err) {
+                msg.error(`${t('error.upload')} ${err}`)
+            }
+        },
+        [dispatch, profile, t]
+    )
+    const handleClick = () => {
+        console.log(avatarRef)
+        avatarRef.current.click()
+    }
     const usernameOptCls = clsx(style.option, style.username_wrapper)
     const avatarOptCls = clsx(style.option, style[`avatar_wrapper_${theme}`])
     const btnCls = style[`btn_${theme}`]
@@ -67,14 +93,24 @@ function Account() {
         {
             icon: <IdcardOutlined />,
             title: t('settings.profile.avatar'),
-            name: 'avatar',
+            // name: 'avatar',
             initialValue: avatar,
             component: (
-                // <Uploader multiple={false} action={handleChangeAvatar}>
-                <div className={avatarOptCls}>
+                // <Upload 
+                //     multiple={false}
+                //     withCredentials={true}
+                //     action={`${config.BASE_URL}/file/upload_image`}
+                //     name="image"
+                //     data={{ 'userId': profile.userId }}
+                // >
+                //     <div className={avatarOptCls}>
+                //         <img src={avatar || defaultAvatar} alt="" />
+                //     </div>
+                // </Upload>
+                <div className={avatarOptCls} onClick={handleClick}>
                     <img src={avatar || defaultAvatar} alt="" />
+                    <input ref={avatarRef} type="file" multiple={false} onChange={handleChangeAvatar}></input>
                 </div>
-                // </Uploader>
             )
         },
         {

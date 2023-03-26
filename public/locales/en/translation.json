@@ -86,6 +86,7 @@
 		"title": "Title",
 		"category": "Category",
 		"introduce": "Introduce",
+		"tags": "Tags",
 		"publish": "Publish",
 		"row": "Row",
 		"column": "Column",

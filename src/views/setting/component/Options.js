@@ -52,4 +52,4 @@ function Options(props) {
     )
 }
 
-export default Options
+export default React.memo(Options)

@@ -37,7 +37,6 @@ export default function Search() {
 
     useEffect(() => {
         if (visible) {
-            ref.current.state.value = ""
             setTimeout(() => {
                 ref.current?.focus?.()
             }, 200);
@@ -119,7 +118,7 @@ export default function Search() {
             trigger="click"
             visible={visible}
             onVisibleChange={visible => setVisible(visible)}
-        // destroyTooltipOnHide={true}
+            destroyTooltipOnHide={true}
         >
             <Button type="text" className={style.btn} icon={<SearchOutlined />}></Button>
         </Popover>

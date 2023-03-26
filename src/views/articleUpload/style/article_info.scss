@@ -44,5 +44,9 @@
 	.center_wrapper {
 		display: flex;
 		justify-content: center;
+
+		input[type="file"] {
+			display: none;
+		}
 	}
 }

@@ -7,13 +7,16 @@ import { useDispatch, useSelector } from 'react-redux'
 import { msg, Upload } from '@/components/base'
 import { useTranslation } from 'react-i18next'
 import { useBoolean, useMediaQuery } from '@/utils/hooks'
-import { TableOutlined, CodeOutlined, DeleteOutlined, EyeOutlined, EyeInvisibleOutlined, CloseOutlined } from '@ant-design/icons'
+import { TableOutlined, CodeOutlined, DeleteOutlined, EyeOutlined, EyeInvisibleOutlined, CloseOutlined, SendOutlined } from '@ant-design/icons'
 import Editor from './Editor'
 import Preview from './Preview'
 import { followScroll, getPosition, insertTemp, setPosition } from '../util'
+import { updateModal } from '@/store/actions'
+import { ArticleInfo } from '@/views/articleUpload'
 
 const area = {
     EDITOR: 'editor',
+
     PERVIEW: 'preview'
 }
 
@@ -83,6 +86,14 @@ function MarkdownEditor() {
         console.log(formData)
     }
 
+    const handlePublish = () => {
+        if(!content || content.length < 150){
+            msg.error(t('article_publish.rule.content_length_limit'))
+            return
+        }
+        dispatch(updateModal(true, <ArticleInfo content={content} />))
+    }
+
     const tableInputElement = (
         <Form onFinish={handleInsertTable}>
             <div className={style.top_wrapper}>
@@ -124,7 +135,7 @@ function MarkdownEditor() {
                 <Button onClick={togglePreview} icon={previewing ? <EyeOutlined /> : <EyeInvisibleOutlined />} type='text' shape="circle"></Button>
             )}
             {online ? (
-                <Button className={style.publish} type="primary" >
+                <Button className={style.publish} onClick={handlePublish} type="primary" icon={<SendOutlined />}>
                     {t('article_publish.to_publish')}
                 </Button>
             ) : (

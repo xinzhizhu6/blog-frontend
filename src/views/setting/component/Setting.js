@@ -11,8 +11,9 @@ import Editor from './Editor'
 import { LoginOutlined } from "@ant-design/icons";
 import { useScrollToTop } from "@/utils/hooks";
 import { debounce } from "@/utils";
-import { saveProfile, saveSetting } from "@/store/actions";
+import { saveProfile, saveSetting, updateModal } from "@/store/actions";
 import Account from "./Account";
+import { Login } from "@/components/modal";
 /**
  * 用户设置。
  * 分为两个表单：
@@ -38,6 +39,9 @@ function Setting() {
     const [settingsForm] = Form.useForm()
     const [profileForm] = Form.useForm()
 
+    const handleGoLogin = () => {
+        dispatch(updateModal(true, <Login/> ))
+    }
 
     const handleSaveSettings = settings => {
         dispatch(saveSetting(settings))
@@ -46,7 +50,8 @@ function Setting() {
         })
     }
 
-    const handleSaveProfile = values => {
+    const handleSaveProfile = async values => {
+        console.log(values)
         const { github, phone, email, wechat } = values
         const profile = {
             ...values,
@@ -59,7 +64,7 @@ function Setting() {
             {online || (
                 <Banner theme={theme}>
                     <span>{t('settings.auto_sync')}</span>
-                    <div>
+                    <div onClick={handleGoLogin}>
                         <span>{t('settings.go_login')}</span>
                         <LoginOutlined />
                     </div>
@@ -71,8 +76,8 @@ function Setting() {
                     onFinish={handleSaveProfile}
                     onValuesChange={debounce(profileForm.submit, accountSaveInterval)}
                 >
-                    <Account />
-                </Form> 
+                    <Account form={profileForm} />
+                </Form>
             )}
             <Form
                 form={settingsForm}

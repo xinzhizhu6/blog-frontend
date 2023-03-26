@@ -53,6 +53,8 @@ function* logout() {
             theme: 'primary',
             useMarkdownGuide: true
         }))
+        localStorage.setItem('theme', 'primary')
+        localStorage.setItem('useMarkdownGuide', true)
         msg.success(i18n.t('success.logout'))
     } catch (err) {
         console.error(i18n.t('error.logout'), err)
